@@ -38,29 +38,54 @@ public class Checker {
         }
     }
 
+    public static int dian(){
+        int x = 0;
+        Scanner sc =new Scanner(System.in);
+        while (true) {
+            try {
+                x=sc.nextInt(16)+1;
+                break;
+            } catch (Exception e) {
+                System.out.println("请重新输入");
+                sc = new Scanner(System.in);
+            }
+        }
+        return x;
+    }
+
     public static boolean playChess(boolean player){
         //提示黑方和白方分别下棋并重新绘制棋盘
-        Scanner sc=new Scanner(System.in);
+
         int x;
         int y;
         if(player){
-            System.out.println("请黑方输入落子的横纵坐标");
-            x=sc.nextInt(16)+1;
-            y=sc.nextInt(16)+1;
+            System.out.println("请黑方落子");
+            System.out.println("请输入横坐标");
+            x=dian();
+            System.out.println("请输入纵坐标");
+            y=dian();
+
+
             while(arrs[x][y]!='+'){
                 System.out.println("请重新输入");
-                x=sc.nextInt(16)+1;
-                y=sc.nextInt(16)+1;
+                System.out.println("请输入横坐标");
+                x=dian();
+                System.out.println("请输入纵坐标");
+                y=dian();
             }
             arrs[x][y]='●';
         }else{
             System.out.println("请白方输入落子的横纵坐标");
-            x=sc.nextInt(16)+1;
-            y=sc.nextInt(16)+1;
+            System.out.println("请输入横坐标");
+            x=dian();
+            System.out.println("请输入纵坐标");
+            y=dian();
             while(arrs[x][y]!='+'){
                 System.out.println("请重新输入");
-                x=sc.nextInt(16)+1;
-                y=sc.nextInt(16)+1;
+                System.out.println("请输入横坐标");
+                x=dian();
+                System.out.println("请输入纵坐标");
+                y=dian();
             }
             arrs[x][y]='○';
         }
