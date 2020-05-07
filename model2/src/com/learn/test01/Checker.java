@@ -97,7 +97,7 @@ public class Checker {
         public static boolean success(int x,int y,char color){
             //每当一方下棋后判断是否获胜
             int shu=1,heng=1,pie=1,na=1;//横竖撇捺计数器，累计到5则表示某方向出现五个相同的旗子
-            for(int i=1;i<=4&&x+i<arrs.length-1;i++)//上
+            for(int i=1;i<=4&&x+i<arrs.length;i++)//上
             {
                 if(arrs[x+i][y]==arrs[x][y]&&arrs[x][y]!='+')
                     shu++;
@@ -118,14 +118,14 @@ public class Checker {
                 else
                     break;
             }
-            for(int i=1;i<=4&&y+i<arrs.length-1;i++) //右
+            for(int i=1;i<=4&&y+i<arrs.length;i++) //右
             {
                 if(arrs[x][y+i]==arrs[x][y]&&arrs[x][y]!='+')
                     heng++;
                 else
                     break;
             }
-            for(int i=1;i<=4&&x+i<arrs.length-1&&y-i>0;i++) //左下
+            for(int i=1;i<=4&&x+i<arrs.length&&y-i>0;i++) //左下
             {
 
                 if(arrs[x+i][y-i]==arrs[x][y]&&arrs[x][y]!='+')
@@ -133,14 +133,14 @@ public class Checker {
                 else
                     break;
             }
-            for(int i=1;i<=4&&x-i>0&&y+i<arrs.length-1;i++) //右上
+            for(int i=1;i<=4&&x-i>0&&y+i<arrs.length;i++) //右上
             {
                 if(arrs[x-i][y+i]==arrs[x][y]&&arrs[x][y]!='+')
                     pie++;
                 else
                     break;
             }
-            for(int i=1;i<=4&&x+i<arrs.length-1&&y+i<arrs.length-1;i++) //右下
+            for(int i=1;i<=4&&x+i<arrs.length&&y+i<arrs.length;i++) //右下
             {
                 if(arrs[x+i][y+i]==arrs[x][y]&&arrs[x][y]!='+')
                     na++;
