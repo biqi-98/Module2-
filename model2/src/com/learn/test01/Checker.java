@@ -43,8 +43,13 @@ public class Checker {
         Scanner sc =new Scanner(System.in);
         while (true) {
             try {
+                if(x!=0){
+                    System.out.println("请重新输入");
+                }
                 x=sc.nextInt(16)+1;
-                break;
+                if(x > 0 && x < arrs.length){
+                    break;
+                }
             } catch (Exception e) {
                 System.out.println("请重新输入");
                 sc = new Scanner(System.in);
